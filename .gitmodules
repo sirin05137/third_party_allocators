@@ -13,12 +13,12 @@
 [submodule "hushvac"]
 	path = hushvac
 	url = git@github.com:cssl-unist/hushvac.git
-[submodule "jemalloc-src"]
-	path = jemalloc-src
-	url = https://github.com/jemalloc/jemalloc.git
 [submodule "minesweeper-fully"]
 	path = minesweeper-fully
 	url = https://github.com/EMarci15/asplos22-minesweeper-reproduce.git
 [submodule "minesweeper-mostly"]
 	path = minesweeper-mostly
 	url = https://github.com/EMarci15/asplos22-minesweeper-reproduce.git
+[submodule "jemalloc"]
+	path = jemalloc
+	url = https://github.com/jemalloc/jemalloc.git
