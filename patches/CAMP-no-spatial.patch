@@ -1,0 +1,54 @@
+diff --git a/src/compiler_pass/CMakeLists.txt b/src/compiler_pass/CMakeLists.txt
+index ee96a3e..17de506 100644
+--- a/src/compiler_pass/CMakeLists.txt
++++ b/src/compiler_pass/CMakeLists.txt
+@@ -1,3 +1,5 @@
+ add_library(ProtectionPass MODULE
+     Protection.cpp
+ )
++
++SET(CMAKE_CXX_FLAGS "-Wall -fno-rtti")
+diff --git a/src/compiler_pass/Protection.cpp b/src/compiler_pass/Protection.cpp
+index 2052b65..7e348d7 100644
+--- a/src/compiler_pass/Protection.cpp
++++ b/src/compiler_pass/Protection.cpp
+@@ -1142,10 +1142,12 @@ static void registerPass(const PassManagerBuilder &,
+   PM.add(new VProtectionPass());
+ }
+ 
++static RegisterPass<VProtectionPass> X("VProtectionPass", "CAMP Instrumentation", false, false);
++
+ static RegisterStandardPasses
+     RegisterMyPass(PassManagerBuilder::EP_OptimizerLast, registerPass);
+ 
+ #if CONFIG_ENABLE_OOB_OPTIMIZATION == 0
+ static RegisterStandardPasses
+     RegisterNoOptPass(PassManagerBuilder::EP_EnabledOnOptLevel0, registerPass);
+-#endif
+\ No newline at end of file
++#endif
+diff --git a/src/compiler_pass/config.h b/src/compiler_pass/config.h
+index 71f0788..0333576 100644
+--- a/src/compiler_pass/config.h
++++ b/src/compiler_pass/config.h
+@@ -1,11 +1,11 @@
+ #define CONFIG_ENABLE_UAF_CHECK 1
+-#define CONFIG_ENABLE_OOB_CHECK 1
++#define CONFIG_ENABLE_OOB_CHECK 0
+ #define CONFIG_ENABLE_READ_CHECK 1
+-#define CONFIG_ENABLE_OOB_OPTIMIZATION 1
+-#define CONFIG_ENABLE_TYPE_BASE_OPTIMIZATION 1
+-#define CONFIG_ENABLE_BUILTIN_OPTIMIZATION 1
+-#define CONFIG_ENABLE_MERGE_OPTIMIZATION 1
+-#define CONFIG_ENABLE_REMOVE_REDUNDANT_OPTIMIZATION 1
+-#define CONFIG_ENABLE_REPORT 1
++#define CONFIG_ENABLE_OOB_OPTIMIZATION 0
++#define CONFIG_ENABLE_TYPE_BASE_OPTIMIZATION 0
++#define CONFIG_ENABLE_BUILTIN_OPTIMIZATION 0
++#define CONFIG_ENABLE_MERGE_OPTIMIZATION 0
++#define CONFIG_ENABLE_REMOVE_REDUNDANT_OPTIMIZATION 0
++#define CONFIG_ENABLE_REPORT 0
+ #define CONFIG_ENABLE_STACK_ESCAPE_OPTIMIZATION 0
+-#define CONFIG_ENABLE_ESCAPE_TYPE_ONLY 0
+\ No newline at end of file
++#define CONFIG_ENABLE_ESCAPE_TYPE_ONLY 0

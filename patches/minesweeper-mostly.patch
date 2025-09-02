@@ -1,0 +1,13 @@
+diff --git a/minesweeper_config.h b/minesweeper_config.h
+index a64c1bc..462337f 100644
+--- a/minesweeper_config.h
++++ b/minesweeper_config.h
+@@ -4,7 +4,7 @@
+ namespace minesweeper {
+ 		constexpr size_t MB = 1024 * 1024;
+ 
+-    constexpr bool STOP_WORLD_RESWEEP = false;
++    constexpr bool STOP_WORLD_RESWEEP = true;
+ 
+     constexpr size_t NUM_SWEEPERS = 6;
+     constexpr size_t PARALLEL_DEALLOCATE_THRESHOLD = 600000;

@@ -1,0 +1,24 @@
+[submodule "CAMP-fully"]
+	path = CAMP-fully
+	url = https://github.com/cla7aye15I4nd/CAMP.git
+[submodule "CAMP-no-spatial"]
+	path = CAMP-no-spatial
+	url = https://github.com/cla7aye15I4nd/CAMP.git
+[submodule "MarkUs"]
+	path = MarkUs
+	url = https://github.com/SamAinsworth/MarkUs-sp2020.git
+[submodule "ffmalloc"]
+	path = ffmalloc
+	url = https://github.com/bwickman97/ffmalloc.git
+[submodule "hushvac"]
+	path = hushvac
+	url = git@github.com:cssl-unist/hushvac.git
+[submodule "jemalloc-src"]
+	path = jemalloc-src
+	url = https://github.com/jemalloc/jemalloc.git
+[submodule "minesweeper-fully"]
+	path = minesweeper-fully
+	url = https://github.com/EMarci15/asplos22-minesweeper-reproduce.git
+[submodule "minesweeper-mostly"]
+	path = minesweeper-mostly
+	url = https://github.com/EMarci15/asplos22-minesweeper-reproduce.git
