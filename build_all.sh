@@ -46,7 +46,9 @@ popd > /dev/null
 
 # build minesweeper-mostly
 pushd minesweeper-mostly > /dev/null
-	patch -p1 < ../patches/minesweeper-mostly.patch
+	pushd minesweeper-public > /dev/null
+		patch -p1 < ../patches/minesweeper-mostly.patch
+	popd > /dev/null
 	cd scripts
 	./build_minesweeper.sh
 popd > /dev/null
